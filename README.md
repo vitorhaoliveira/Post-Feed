@@ -301,13 +301,8 @@ Para criar um build otimizado:
 npm run build
 ```
 
-Os arquivos otimizados estarão em `dist/preco-justo/`.
+Os arquivos otimizados estarão em `dist/post-feed/`.
 
-### Tailwind não está aplicando estilos
-```bash
-# Verifique se tailwind.config.js existe
-# Verifique se styles.css tem as diretivas @tailwind
-```
 
 ## 📝 Scripts Disponíveis
 
@@ -315,27 +310,5 @@ Os arquivos otimizados estarão em `dist/preco-justo/`.
 - `npm run build` - Build de produção
 - `npm test` - Executa testes (se implementados)
 - `npm run lint` - Verifica código com ESLint
-
-## 🤝 Contribuindo
-
-Este é um projeto de desafio técnico, mas sugestões são bem-vindas:
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto foi desenvolvido para fins educacionais e de avaliação técnica.
-
-## 👨‍💻 Autor
-
-Vitor Hugo
-
-Desenvolvido como parte do Desafio Técnico - Post Feed
-
----
 
 **Nota**: Este projeto consome a API pública JSONPlaceholder (https://jsonplaceholder.typicode.com), que é uma API fake para testes e prototipação. As operações de modificação (POST, PUT, DELETE) simulam sucesso mas não persistem dados realmente no servidor.
