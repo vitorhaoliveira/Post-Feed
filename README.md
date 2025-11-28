@@ -43,7 +43,7 @@ ng serve
 
 ### 4. Acesse a aplicação
 
-Abra seu navegador e acesse: [http://localhost:4200](http://localhost:4200)
+Abra seu navegador e acesse: ([http://post-feed](https://post-feed-smoky.vercel.app/))
 
 ## 📁 Estrutura do Projeto
 
