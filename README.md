@@ -1,240 +1,240 @@
 # Post Feed - Angular Application
 
-Uma aplicação Angular moderna para gerenciamento de Posts e Comentários, desenvolvida como parte de um desafio técnico. A aplicação consome a API pública JSONPlaceholder e implementa operações CRUD completas com cache in-memory, atualizações otimistas e interface responsiva.
+A modern Angular application for managing Posts and Comments, developed as part of a technical challenge. The application consumes the public JSONPlaceholder API and implements complete CRUD operations with in-memory cache, optimistic updates, and a responsive interface.
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Technologies Used
 
-- **Angular 17+** com Standalone Components
-- **TypeScript** com tipagem estrita
-- **Tailwind CSS** para estilização
-- **RxJS** para programação reativa
-- **Angular Signals** para gerenciamento de estado
-- **JSONPlaceholder API** para backend
+- **Angular 17+** with Standalone Components
+- **TypeScript** with strict typing
+- **Tailwind CSS** for styling
+- **RxJS** for reactive programming
+- **Angular Signals** for state management
+- **JSONPlaceholder API** for backend
 
-## 📋 Requisitos
+## 📋 Requirements
 
-Antes de começar, certifique-se de ter instalado:
+Before starting, make sure you have installed:
 
-- **Node.js** versão 18.x ou superior
-- **npm** versão 9.x ou superior
-- **Angular CLI** versão 17.x ou superior (será instalado automaticamente)
+- **Node.js** version 18.x or higher
+- **npm** version 9.x or higher
+- **Angular CLI** version 17.x or higher (will be installed automatically)
 
-## 🔧 Instalação
+## 🔧 Installation
 
-### 1. Clone o repositório (ou extraia os arquivos)
+### 1. Clone the repository (or extract the files)
 
-### 2. Instale as dependências
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Execute o servidor de desenvolvimento
+### 3. Run the development server
 
 ```bash
 npm start
 ```
 
-ou
+or
 
 ```bash
 ng serve
 ```
 
-### 4. Acesse a aplicação
+### 4. Access the application
 
-Abra seu navegador e acesse: ([http://post-feed](https://post-feed-smoky.vercel.app/))
+Open your browser and navigate to: ([http://post-feed](https://post-feed-smoky.vercel.app/))
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 src/app/
 ├── core/
 │   ├── interceptors/
-│   │   ├── base-url.interceptor.ts       # Adiciona URL base da API
-│   │   └── error-handler.interceptor.ts  # Tratamento global de erros
+│   │   ├── base-url.interceptor.ts       # Adds API base URL
+│   │   └── error-handler.interceptor.ts  # Global error handling
 │   ├── services/
-│   │   ├── posts.service.ts              # Serviço de Posts com cache
-│   │   └── comments.service.ts           # Serviço de Comentários com cache
+│   │   ├── posts.service.ts              # Posts service with cache
+│   │   └── comments.service.ts          # Comments service with cache
 │   └── models/
-│       ├── post.interface.ts             # Interfaces de Post e DTOs
-│       └── comment.interface.ts          # Interfaces de Comment e DTOs
+│       ├── post.interface.ts             # Post interfaces and DTOs
+│       └── comment.interface.ts          # Comment interfaces and DTOs
 ├── shared/
 │   └── components/
-│       ├── modal/                        # Modal reutilizável
-│       ├── confirmation-dialog/          # Diálogo de confirmação
-│       ├── spinner/                      # Indicador de carregamento
-│       └── error-message/                # Mensagem de erro
+│       ├── modal/                        # Reusable modal
+│       ├── confirmation-dialog/          # Confirmation dialog
+│       ├── spinner/                      # Loading indicator
+│       └── error-message/                # Error message
 ├── features/
 │   ├── posts/
-│   │   ├── posts-list/                   # Listagem de posts (rota principal)
-│   │   ├── post-detail/                  # Detalhes do post
-│   │   ├── post-form-modal/              # Formulário de criação/edição
-│   │   └── posts-table/                  # Tabela com paginação e busca
+│   │   ├── posts-list/                   # Posts listing (main route)
+│   │   ├── post-detail/                  # Post details
+│   │   ├── post-form-modal/              # Create/edit form
+│   │   └── posts-table/                  # Table with pagination and search
 │   └── comments/
-│       ├── comments-list/                # Listagem de comentários
-│       └── comment-form/                 # Formulário de comentário
+│       ├── comments-list/                # Comments listing
+│       └── comment-form/                 # Comment form
 ├── app.component.ts
-├── app.config.ts                         # Configuração da aplicação
-└── app.routes.ts                         # Definição de rotas
+├── app.config.ts                         # Application configuration
+└── app.routes.ts                         # Route definitions
 ```
 
-## ✨ Funcionalidades
+## ✨ Features
 
 ### Posts
-- ✅ Listagem de posts com paginação (10, 25, 50 por página)
-- ✅ Busca por título e conteúdo (com debounce)
-- ✅ Ordenação por ID ou Título (crescente/decrescente)
-- ✅ Criação de novos posts
-- ✅ Edição de posts existentes
-- ✅ Exclusão com confirmação
-- ✅ Visualização de detalhes do post
-- ✅ Cache in-memory para melhor performance
+- ✅ Posts listing with pagination (10, 25, 50 per page)
+- ✅ Search by title and content (with debounce)
+- ✅ Sorting by ID or Title (ascending/descending)
+- ✅ Create new posts
+- ✅ Edit existing posts
+- ✅ Delete with confirmation
+- ✅ View post details
+- ✅ In-memory cache for better performance
 
-### Comentários
-- ✅ Listagem de comentários por post
-- ✅ Adição de novos comentários
-- ✅ Edição de comentários existentes
-- ✅ Exclusão com confirmação
-- ✅ Validação de e-mail
-- ✅ Cache in-memory sincronizado
+### Comments
+- ✅ Comments listing by post
+- ✅ Add new comments
+- ✅ Edit existing comments
+- ✅ Delete with confirmation
+- ✅ Email validation
+- ✅ Synchronized in-memory cache
 
-### Experiência do Usuário
-- ✅ Interface responsiva (mobile-first)
-- ✅ Indicadores de carregamento
-- ✅ Mensagens de erro amigáveis
-- ✅ Estados vazios informativos
-- ✅ Atualizações otimistas com rollback
-- ✅ Acessibilidade (ARIA labels, navegação por teclado)
+### User Experience
+- ✅ Responsive interface (mobile-first)
+- ✅ Loading indicators
+- ✅ User-friendly error messages
+- ✅ Informative empty states
+- ✅ Optimistic updates with rollback
+- ✅ Accessibility (ARIA labels, keyboard navigation)
 
-## 🏗️ Arquitetura e Decisões Técnicas
+## 🏗️ Architecture and Technical Decisions
 
 ### Hybrid State Management: Signals + RxJS
 
-A aplicação utiliza uma abordagem híbrida que aproveita o melhor de ambos os paradigmas:
+The application uses a hybrid approach that leverages the best of both paradigms:
 
-**Angular Signals** são usados para:
-- Estado síncrono da UI (modais abertos/fechados, loading, erros)
-- Cache in-memory de posts e comentários
-- Estado derivado com `computed()`
-- Reatividade granular e eficiente
+**Angular Signals** are used for:
+- Synchronous UI state (open/closed modals, loading, errors)
+- In-memory cache of posts and comments
+- Derived state with `computed()`
+- Granular and efficient reactivity
 
-**RxJS Observables** são usados para:
-- Operações HTTP assíncronas
-- Transformação e composição de dados
-- Tratamento de erros
-- Operações complexas de stream
+**RxJS Observables** are used for:
+- Asynchronous HTTP operations
+- Data transformation and composition
+- Error handling
+- Complex stream operations
 
-**Por quê?**
-- Signals oferecem melhor performance para estado local e reatividade da UI
-- RxJS continua sendo ideal para operações assíncronas e HTTP
-- A combinação permite código mais limpo e manutenível
-- Uso do `async pipe` nos templates para automatic subscription management
+**Why?**
+- Signals offer better performance for local state and UI reactivity
+- RxJS remains ideal for asynchronous operations and HTTP
+- The combination allows for cleaner and more maintainable code
+- Use of `async pipe` in templates for automatic subscription management
 
-### Cache In-Memory com Map
+### In-Memory Cache with Map
 
-Implementação de cache usando `Map<id, entity>` para:
-- Acesso O(1) aos dados
-- Redução de chamadas à API
-- Sincronização automática após operações CRUD
-- Experiência mais rápida para o usuário
+Cache implementation using `Map<id, entity>` for:
+- O(1) data access
+- Reduced API calls
+- Automatic synchronization after CRUD operations
+- Faster user experience
 
-**Estratégia:**
-1. Primeiro, verifica o cache
-2. Se não encontrado, busca da API
-3. Atualiza o cache com dados da API
-4. Estado compartilhado entre componentes via service
+**Strategy:**
+1. First, check the cache
+2. If not found, fetch from API
+3. Update cache with API data
+4. Shared state between components via service
 
-### Atualizações Otimistas com Rollback
+### Optimistic Updates with Rollback
 
-Todas as operações de modificação (Create, Update, Delete) implementam:
+All modification operations (Create, Update, Delete) implement:
 
-1. **Salvar estado anterior** antes da operação
-2. **Atualizar cache/UI imediatamente** (otimista)
-3. **Enviar requisição para a API**
-4. **Em caso de sucesso**: confirmar alteração
-5. **Em caso de erro**: rollback ao estado anterior + mostrar erro
+1. **Save previous state** before the operation
+2. **Update cache/UI immediately** (optimistic)
+3. **Send request to API**
+4. **On success**: confirm the change
+5. **On error**: rollback to previous state + show error
 
-**Benefícios:**
-- Interface instantaneamente responsiva
-- Melhor experiência do usuário
-- Feedback visual imediato
-- Recuperação elegante de erros
+**Benefits:**
+- Instantly responsive interface
+- Better user experience
+- Immediate visual feedback
+- Elegant error recovery
 
 ### Standalone Components
 
-Toda a aplicação usa Standalone Components (Angular 17+):
-- Sem necessidade de NgModules
-- Imports explícitos em cada componente
-- Lazy loading simplificado
-- Melhor tree-shaking
+The entire application uses Standalone Components (Angular 17+):
+- No need for NgModules
+- Explicit imports in each component
+- Simplified lazy loading
+- Better tree-shaking
 
 ### HTTP Interceptors
 
 **BaseUrlInterceptor:**
-- Adiciona automaticamente a URL base da API a todas as requisições
-- Centraliza configuração da API
+- Automatically adds the API base URL to all requests
+- Centralizes API configuration
 
 **ErrorHandlerInterceptor:**
-- Intercepta todos os erros HTTP
-- Traduz códigos de erro para mensagens amigáveis em português
-- Fornece informações estruturadas de erro
+- Intercepts all HTTP errors
+- Translates error codes to user-friendly messages in English
+- Provides structured error information
 
 ### Component Design Patterns
 
 **Container/Presenter Pattern:**
-- `PostsListComponent` = Container (lógica, estado, serviços)
-- `PostsTableComponent` = Presenter (apenas exibição, @Input/@Output)
+- `PostsListComponent` = Container (logic, state, services)
+- `PostsTableComponent` = Presenter (display only, @Input/@Output)
 
-**Composição de Componentes:**
-- Componentes pequenos e focados em uma responsabilidade
-- Reutilização através de `shared/components`
-- Props tipadas com TypeScript
+**Component Composition:**
+- Small components focused on a single responsibility
+- Reusability through `shared/components`
+- Typed props with TypeScript
 
-## ♿ Acessibilidade
+## ♿ Accessibility
 
-A aplicação implementa práticas de acessibilidade:
+The application implements accessibility practices:
 
-- **Semântica HTML**: uso de tags apropriadas (`main`, `article`, `nav`, etc.)
-- **ARIA Labels**: todos os elementos interativos têm labels descritivos
-- **Navegação por teclado**: 
-  - `Tab` para navegar entre elementos
-  - `Enter` para ativar botões
-  - `Esc` para fechar modais
-- **Focus Management**: foco é gerenciado em modais e formulários
-- **Screen Readers**: anúncios de loading e erros com `aria-live`
-- **Contraste de cores**: seguindo WCAG 2.1 AA
-- **Estados visuais**: hover, focus, active bem definidos
+- **HTML Semantics**: use of appropriate tags (`main`, `article`, `nav`, etc.)
+- **ARIA Labels**: all interactive elements have descriptive labels
+- **Keyboard Navigation**: 
+  - `Tab` to navigate between elements
+  - `Enter` to activate buttons
+  - `Esc` to close modals
+- **Focus Management**: focus is managed in modals and forms
+- **Screen Readers**: loading and error announcements with `aria-live`
+- **Color Contrast**: following WCAG 2.1 AA
+- **Visual States**: hover, focus, active well defined
 
-## 🎨 Estilização
+## 🎨 Styling
 
 ### Tailwind CSS
 
-Escolhido por:
-- Utilização de classes utilitárias
-- Configuração minimal
-- Bundle size otimizado (apenas classes usadas)
-- Responsividade mobile-first
-- Customização via `tailwind.config.js`
+Chosen for:
+- Utility class usage
+- Minimal configuration
+- Optimized bundle size (only used classes)
+- Mobile-first responsiveness
+- Customization via `tailwind.config.js`
 
 ### Design System
 
-**Cores:**
-- Primária: Blue-600 (ações principais)
-- Secundária: Indigo-600 (edição)
-- Destrutiva: Red-600 (exclusão)
-- Neutra: Gray (textos, backgrounds)
+**Colors:**
+- Primary: Blue-600 (main actions)
+- Secondary: Indigo-600 (editing)
+- Destructive: Red-600 (deletion)
+- Neutral: Gray (texts, backgrounds)
 
-**Espaçamento:**
-- Consistente usando escala Tailwind (4, 8, 16, 24px, etc.)
-- Padding e margin proporcionais
+**Spacing:**
+- Consistent using Tailwind scale (4, 8, 16, 24px, etc.)
+- Proportional padding and margin
 
-**Tipografia:**
-- Sistema de fontes nativo para melhor performance
-- Hierarquia clara (h1, h2, h3)
-- Line-height adequado para leitura
+**Typography:**
+- Native font system for better performance
+- Clear hierarchy (h1, h2, h3)
+- Adequate line-height for reading
 
-## 🔄 Fluxo de Dados
+## 🔄 Data Flow
 
 ```
 User Action → Component
@@ -252,63 +252,63 @@ User Action → Component
          Component Re-render
 ```
 
-## 🧪 Como Testar
+## 🧪 How to Test
 
-### Testes Manuais
+### Manual Testing
 
-1. **Listagem de Posts**
-   - Acesse a página inicial
-   - Verifique se os posts carregam
-   - Teste paginação (anterior/próxima)
-   - Teste busca por título/conteúdo
-   - Teste ordenação por ID e Título
+1. **Posts Listing**
+   - Access the home page
+   - Verify that posts load
+   - Test pagination (previous/next)
+   - Test search by title/content
+   - Test sorting by ID and Title
 
-2. **CRUD de Posts**
-   - Clique em "Novo Post" e crie um post
-   - Clique em "Editar" e modifique um post
-   - Clique em "Excluir" e confirme a exclusão
+2. **Posts CRUD**
+   - Click "New Post" and create a post
+   - Click "Edit" and modify a post
+   - Click "Delete" and confirm deletion
 
-3. **Detalhes do Post**
-   - Clique em "Ver" em qualquer post
-   - Verifique detalhes e comentários
-   - Teste edição e exclusão na página de detalhes
+3. **Post Details**
+   - Click "View" on any post
+   - Verify details and comments
+   - Test editing and deletion on the details page
 
-4. **CRUD de Comentários**
-   - Na página de detalhes, adicione um comentário
-   - Edite um comentário existente
-   - Exclua um comentário com confirmação
+4. **Comments CRUD**
+   - On the details page, add a comment
+   - Edit an existing comment
+   - Delete a comment with confirmation
 
-5. **Estados de Erro**
-   - Desconecte a internet e tente carregar dados
-   - Verifique mensagens de erro amigáveis
-   - Teste botão "Tentar novamente"
+5. **Error States**
+   - Disconnect the internet and try to load data
+   - Verify user-friendly error messages
+   - Test "Try again" button
 
-6. **Responsividade**
-   - Redimensione a janela do navegador
-   - Teste em dispositivo móvel
-   - Verifique que todos os elementos se adaptam
+6. **Responsiveness**
+   - Resize the browser window
+   - Test on mobile device
+   - Verify that all elements adapt
 
-7. **Acessibilidade**
-   - Navegue apenas com teclado (Tab, Enter, Esc)
-   - Use um leitor de tela
-   - Verifique focus indicators
+7. **Accessibility**
+   - Navigate only with keyboard (Tab, Enter, Esc)
+   - Use a screen reader
+   - Verify focus indicators
 
-## 📦 Build de Produção
+## 📦 Production Build
 
-Para criar um build otimizado:
+To create an optimized build:
 
 ```bash
 npm run build
 ```
 
-Os arquivos otimizados estarão em `dist/post-feed/`.
+The optimized files will be in `dist/post-feed/`.
 
 
-## 📝 Scripts Disponíveis
+## 📝 Available Scripts
 
-- `npm start` - Inicia servidor de desenvolvimento
-- `npm run build` - Build de produção
-- `npm test` - Executa testes (se implementados)
-- `npm run lint` - Verifica código com ESLint
+- `npm start` - Starts development server
+- `npm run build` - Production build
+- `npm test` - Runs tests (if implemented)
+- `npm run lint` - Checks code with ESLint
 
-**Nota**: Este projeto consome a API pública JSONPlaceholder (https://jsonplaceholder.typicode.com), que é uma API fake para testes e prototipação. As operações de modificação (POST, PUT, DELETE) simulam sucesso mas não persistem dados realmente no servidor.
+**Note**: This project consumes the public JSONPlaceholder API (https://jsonplaceholder.typicode.com), which is a fake API for testing and prototyping. Modification operations (POST, PUT, DELETE) simulate success but do not actually persist data on the server.
